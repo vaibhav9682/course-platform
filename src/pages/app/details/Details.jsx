@@ -1,8 +1,15 @@
 import React from "react";
 import style from "./Details.module.css";
-import coursesData from "../../../data/courses.json";
+import courseData from "../../../data/courses.json";
+import { useParams, Link } from "react-router-dom";
+
+
 
 function Details() {
+  
+  const {courseId} = useParams();
+  const course = courseData.find((course)=> courseId === course.id)
+ console.log(course)
   return (
     <div className={style.courses_container}>
       <div className={style.card_container}>
@@ -16,8 +23,9 @@ function Details() {
           <p className={style.card_description}>{course.description}</p>
         </div>
       </div>
-
+        <Link to={`/learn/${course.id}`}>
       <button className={style.button}>Start Learning</button>
+      </Link>
     </div>
   );
 }

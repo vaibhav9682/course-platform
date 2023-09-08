@@ -23,6 +23,11 @@ nav {
     justify-content: space-between;
 }
 
+.nav_container a{
+    text-decoration: none;
+    color: white;
+}
+
 .nav_title_wrapper {
     display: flex;
     align-items: center;
